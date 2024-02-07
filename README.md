@@ -7,7 +7,7 @@
 >The 11th International Conference on 3D Vision (3DV 2024)
 
 #### Updates
-- Feb 2, 2023: Codebase setup.
+- Feb 6, 2023: Codebase setup.
 
 ## Setup
 ```
