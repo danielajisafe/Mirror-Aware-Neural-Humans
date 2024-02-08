@@ -114,7 +114,7 @@ The 3D outputs can also be visualized in the jupyter notebook ```vis/vis.ipynb``
 The results from [stage 1]() and [stage 2]() is used to prepare data for training the neural model (stage 3). We provide the pre-processed data in ```.h5``` format for two characters ```camera 3 (eval)``` and ```subject 1 (non-eval)```. Please see [drive](https://drive.google.com/drive/folders/1hTA1BKX63UeulJUixS1vo8hLqsbpX2AA?usp=sharing) and kindly cite the [data source](https://github.com/zju3dv/Mirrored-Human/) for the eval set appropriately.
 
 #### Stage 3
-Coming soon...
+Coming soon ...
 
 ## Citation
 if the code is helpful to your research, please consider citing:
