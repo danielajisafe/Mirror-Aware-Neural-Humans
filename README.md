@@ -8,6 +8,7 @@
 
 #### Updates
 - Feb 6, 2023: Codebase setup.
+- Feb 14, 2023: Stage 1 and 2 code released.
 
 ## Setup
 ```
