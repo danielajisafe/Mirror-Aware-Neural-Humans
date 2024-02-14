@@ -51,7 +51,9 @@ Mirror-Aware-Neural-Humans
    ├── eval
    └── non_eval
 
-├── smpl_files
+├── extras
+├── vis
+   └── vis.ipynb
 ├── README.md
 └── requirements.txt
 ```
@@ -117,7 +119,7 @@ The results from [stage 1]() and [stage 2]() is used to prepare data for trainin
 Coming soon ...
 
 ## Citation
-if the code is helpful to your research, please consider citing:
+if the code is helpful to your research, please consider citing and giving us a ⭐ :
 ```
 @article{ajisafe2023mirror,
 title={Mirror-Aware Neural Humans},
