@@ -67,5 +67,5 @@ python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 3 --json_f
 python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 0 --json_file 'dataset/non_eval/Subj3_alphap2dcpose.json' --image_directory 'dataset/visualai/images/3' --skel_type 'dcpose' --seq_name 'Subj3' --pickle_path 'dataset/calibration/Subj3/calibration.pickle' --output_dir outputs --infostamp user"
 ```
 
-Please proceed to [Stage 2](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/tree/code_release?tab=readme-ov-file#stage-2) in the main repository.
+Please proceed to [Stage 2](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans?tab=readme-ov-file#stage-2) in the main repository.
 
