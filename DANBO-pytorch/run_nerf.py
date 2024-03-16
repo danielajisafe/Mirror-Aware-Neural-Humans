@@ -277,6 +277,9 @@ def config_parser():
                         help='batch size (number of random rays per gradient step)')
     parser.add_argument("--lrate", type=float, default=5e-4,
                         help='learning rate')
+    parser.add_argument("--fused", action='store_true',
+                        help="Used when torch version does not support a case without using `fused`")
+    
     parser.add_argument("--lrate_decay", type=int, default=250,
                         help='exponential learning rate decay (in args.decay_unit (default=1000) steps)')
     parser.add_argument("--lrate_decay_rate", type=float, default=0.1,
@@ -714,7 +717,7 @@ def train():
         time0 = time.time()
         batch = next(train_iter)
         loss_dict, stats = trainer.train_batch(batch, i, global_step)
-
+        # pdb.set_trace()
         # the gradients has been reset in trainer.py before this point.
         if args.opt_v_color: 
             writer.add_scalar("v_color_factor/R_v", render_kwargs_train['v_color_factor'][0].item(), i)
@@ -787,9 +790,16 @@ def train():
                                                   gt_imgs=masked_gts, gt_masks=gt_masks, vid_base=moviebase, centers=centers,
                                                   bg_imgs=bg_imgs, bg_indices=bg_indices, eval_metrics=args.eval_metrics, eval_both=True, index=i)
 
+
             fps  = 5
+
+
             writer.add_video("Val/ValRGB", torch.tensor(rgbs).permute(0, 3, 1, 2)[None], i, fps=fps)
-            writer.add_video("Val/ValDIPS", torch.tensor(disps).permute(0, 3, 1, 2)[None], i, fps=fps)
+            try:
+                writer.add_video("Val/ValDIPS", torch.tensor(disps).permute(0, 3, 1, 2)[None], i, fps=fps)
+            except:
+                # in case a single channel throws an error
+                writer.add_video("Val/ValDIPS", torch.tensor(disps).repeat(1,1,1,3).permute(0, 3, 1, 2)[None], i, fps=fps)
             if args.opt_pose:
                 RH, RW, Rfocals = render_data["hwf"]
                 # set the resolution right!

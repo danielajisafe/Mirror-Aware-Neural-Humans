@@ -696,7 +696,7 @@ def init_catalog(args, n_bullet=10):
 
 
     mirror_easy = {
-        'data_h5': args.data_path + '/mirror_train_h5py.h5',,
+        'data_h5': args.data_path + '/mirror_train_h5py.h5',
         'data_h5_v': args.data_path + '/v_mirror_train_h5py.h5',
         'retarget': set_dict(easy_idx, length=25, skip=2, center_kps=True),
         'bullet': set_dict(easy_idx, n_bullet=args.n_bullet, bullet_ang=args.bullet_ang),
@@ -2185,7 +2185,11 @@ def run_render():
             if i==0: print("cca took: %.2f seconds" %(timenow.time() - start))
 
         imageio.imwrite(os.path.join(basedir, time, f'image_{view}', f'{rel_idx:05d}{b_idx}.png'), rgb)
-        imageio.imwrite(os.path.join(basedir, time, f'acc_{view}', f'{rel_idx:05d}{b_idx}.png'), acc)
+        try:
+            imageio.imwrite(os.path.join(basedir, time, f'acc_{view}', f'{rel_idx:05d}{b_idx}.png'), acc)
+        except:
+            acc = np.repeat(acc, repeats=3, axis=2)
+            imageio.imwrite(os.path.join(basedir, time, f'acc_{view}', f'{rel_idx:05d}{b_idx}.png'), acc)
         imageio.imwrite(os.path.join(basedir, time, f'skel_{view}', f'{rel_idx:05d}{b_idx}.png'), skel)
     np.save(os.path.join(basedir, time, 'bboxes.npy'), bboxes, allow_pickle=True)
 

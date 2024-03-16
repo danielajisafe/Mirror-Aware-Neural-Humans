@@ -132,7 +132,7 @@ def render(H, W, focal, chunk=1024*64, rays=None, c2w=None,
     if (c2w is not None) and (rays is None):
         # special case to render full image
         center = center.ravel() if center is not None else None
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         rays_o, rays_d, _ = get_rays(H, W, focal, c2w, center=center)
     else:
@@ -351,7 +351,8 @@ class Trainer:
                                              optimizer=self.optimizer,
                                              global_step=global_step,
                                              decay_unit=args.decay_unit)
-
+        import pdb
+        # pdb.set_trace()
         if not args.finetune:
             ray_caster.module.update_embed_fns(global_step, args)
 

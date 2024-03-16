@@ -186,13 +186,12 @@ def create_raycaster(args, data_attrs, device=None):
         v_color_factor = torch.ones(3)
         v_color_factor.requires_grad = True
         grad_vars = grad_vars + [v_color_factor]
-
     # Create optimizer
     if args.weight_decay is None:
-        optimizer = torch.optim.Adam(params=grad_vars, lr=args.lrate, betas=(0.9, 0.999))
+        optimizer = torch.optim.Adam(params=grad_vars, lr=args.lrate, betas=(0.9, 0.999), fused=args.fused)
     else:
         optimizer = torch.optim.AdamW(params=grad_vars, lr=args.lrate, betas=(0.9, 0.999),
-                                      weight_decay=args.weight_decay)
+                                      weight_decay=args.weight_decay, fused = args.fused)
 
     start = 0
     basedir = args.basedir
@@ -844,7 +843,6 @@ class RayCaster(nn.Module):
         ret0: outputs from coarse network.
         '''
         
-        #import ipdb; ipdb.set_trace()
 
         # base
         collected = {'rgb_map': ret['rgb_map'], 'disp_map': ret['disp_map'],

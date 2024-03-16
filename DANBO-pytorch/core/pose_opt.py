@@ -48,7 +48,7 @@ def create_popt(args, data_attrs, ckpt=None, device=None):
     grad_opt_vars = list(popt_layer.parameters())
     pose_optimizer = torch.optim.Adam(params=grad_opt_vars,
                                       lr=args.opt_pose_lrate,
-                                      betas=(0.9, 0.999))
+                                      betas=(0.9, 0.999), fused=args.fused)
 
     # initalize anchor (for regularization loss)
     anchor_kps, anchor_bones, anchor_beta = init_kps, init_bones, beta

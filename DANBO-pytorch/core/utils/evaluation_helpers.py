@@ -319,7 +319,12 @@ def evaluate_metric(rgbs, gt_imgs, disps=None, gt_masks=None, valid_idxs=None, p
     except:
         th_ssim = ssim_eval(th_rgbs.float(), th_gt.float())
         print()
-    test_ssim = th_ssim.permute(0, 2, 3, 1).cpu().numpy()
+
+    try:
+        test_ssim = th_ssim.permute(0, 2, 3, 1).cpu().numpy()
+    except:
+       test_ssim = th_ssim.cpu().numpy() 
+       
     sqr_diff = np.square(gt_imgs - rgbs)
 
     if gt_masks is not None:

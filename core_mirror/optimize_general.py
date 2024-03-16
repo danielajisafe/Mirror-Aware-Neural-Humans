@@ -270,7 +270,6 @@ for idx, val in enumerate(loc_values):
 
         else:
             print("hhmmn")
-
     # -------------------------------------------------------Video Loader-------------------------------------------------------------------     
 
     if args.eval_data and args.gt and not args.comb_set:
