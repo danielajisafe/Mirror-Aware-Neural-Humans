@@ -89,7 +89,7 @@ Mirror-Aware-Neural-Humans
 
 This stage follows the classical multi-view optimization going from 2D to 3D but with a single camera. We start from a template rest pose, which comes from the first frame in the [H3.6M dataset](http://vision.imar.ro/human3.6m/description.php). Please set the flag ```--h36m_data_dir``` in the command below to where your H3.6M data is located. 
 
-We are not allowed to share the pre-processed template pose due to license terms, please reach out to ```dajisafe[at]cs.ubc.ca``` with the subject title ```Mirror-Aware-Human Template Pose``` if you need access, and set ```--h36m_data_dir``` to ```None```.
+We are not allowed to share the pre-processed template pose due to license terms, please reach out to ```dajisafe[at]cs.ubc.ca``` with the subject title ```Mirror-Aware-Human Template Pose``` if you need access, and kindly dont forget to set ```--h36m_data_dir``` to ```None```.
 
 You can reconstruct the 3D pose with the following command:
 ```
