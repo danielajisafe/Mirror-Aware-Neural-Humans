@@ -41,7 +41,8 @@ We reconstruct camera intrinsics and ground normal calibrations using 2D keypoin
 cd dataset && mkdir eval non_eval visualai visualai/images
 ```
 
-Your directory tree should look like this:
+To run stage 1, and prepare for stage 2 and 3, please follow these [intermediate steps](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/blob/main/dataset/intermediate.md) carefully. Your directory tree should look like the one below.
+
 ```
 Mirror-Aware-Neural-Humans
 ├── core_mirror
@@ -82,8 +83,6 @@ Mirror-Aware-Neural-Humans
 └── environment.yml
 └── requirements.txt
 ``` -->
-
-To run stage 1, and prepare for stage 2 and 3, please follow these [intermediate steps](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/blob/main/dataset/intermediate.md) carefully.
 
 
 #### Stage 2
