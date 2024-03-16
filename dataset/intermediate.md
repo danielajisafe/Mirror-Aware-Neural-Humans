@@ -47,7 +47,7 @@ python run_single_view.py /path/to/dataset/zju-m-seq1/images/3/00000000.jpg /pat
 # non-eval sequence
 python run_single_view.py /path/to/dataset/visualai/images/3/00000000.jpg /path/to/dataset/non_eval/Subj3_alphapose-results.json 1
 ```
-the reconstructed ground plane and focal length should be saved to a pickle and json file under ```outputs/single_view_[timestamp]``` within CasCalib. Please move these output files to the appropriate folders under ```dataset/calibration/``` within the mirror-aware-human repository.
+the reconstructed ground plane and focal length should be saved to a pickle and json file under ```outputs/single_view_[timestamp]``` within CasCalib. Please move these output files (pickle and json) to the appropriate folders under ```dataset/calibration/``` within the mirror-aware-human repository.
 
 I-Step B: 
 - Be sure you are within the ```Mirror-Aware-Neural-Humans``` repository and ```mirror-aware-human``` environment is activated.
