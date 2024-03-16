@@ -39,7 +39,7 @@ mkdir dataset/calibration/ dataset/calibration/Cam3 dataset/calibration/Subj3
 
 ### Stage 1
 
-We reconstruct the ground plane using our single-view calibration method called ```CasCalib``` with 2D keypoint detections from [Alphapose](https://github.com/MVIG-SJTU/AlphaPose) as anchors. The focal length can also be reconstructed if not available. By following the instructions *there* (step 1-to-3) and running the following code in the CasCalib [repository](https://github.com/tangytoby/CasCalib/tree/main), 
+We reconstruct the ground plane using our single-view calibration method called ```CasCalib``` with 2D keypoint detections from [Alphapose](https://github.com/MVIG-SJTU/AlphaPose) as anchors. The focal length can also be reconstructed if not available. By following the instructions there (step 1-to-3) (you need it😀) and running the following code in the CasCalib [repository](https://github.com/tangytoby/CasCalib/tree/main), 
 
 ```
 # eval sequence

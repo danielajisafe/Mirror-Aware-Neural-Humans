@@ -132,7 +132,7 @@ year={2023}
 }
 ```
 ```
-@misc{CasCalib,a@1
+@misc{CasCalib,
 title={CasCalib: Cascaded Calibration for Motion Capture from Sparse Unsynchronized Cameras},
 author={Tang, James and Suri, Shashwat and Ajisafe, Daniel and and Wandt, Bastian and Rhodin, Helge},
 note ={Technical report},
