@@ -62,9 +62,11 @@ I-Step C:
 - Reconstruct initial 3D ankles from 2D detections via plane ray intersection. See results in ```/output``` folder.
 
 ```
-python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 3 --json_file "dataset/eval/Cam3_alphap2dcpose.json" --image_directory "dataset/zju-m-seq1/images/3/" --pickle_path 'dataset/calibration/Cam3/calibration.pickle' --output_dir outputs --infostamp user --skel_type "dcpose" --useGTfocal 
+# eval sequence
+python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 3 --json_file "dataset/eval/Cam3_alphap2dcpose.json" --image_directory "dataset/zju-m-seq1/images/3/" --pickle_path 'dataset/calibration/Cam3/calibration.pickle' --output_dir outputs --infostamp "user" --skel_type "dcpose" --useGTfocal 
 
-python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 0 --json_file 'dataset/non_eval/Subj3_alphap2dcpose.json' --image_directory 'dataset/visualai/images/3' --skel_type 'dcpose' --seq_name 'Subj3' --pickle_path 'dataset/calibration/Subj3/calibration.pickle' --output_dir outputs --infostamp user"
+# non-eval sequence
+python3 -m core_mirror.internal_calib.plane_ray_intersect --camera_id 0 --json_file 'dataset/non_eval/Subj3_alphap2dcpose.json' --image_directory 'dataset/visualai/images/3' --skel_type 'dcpose' --seq_name 'Subj3' --pickle_path 'dataset/calibration/Subj3/calibration.pickle' --output_dir outputs --infostamp "user"
 ```
 
 Please proceed to [Stage 2](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans?tab=readme-ov-file#stage-2) in the main repository.
