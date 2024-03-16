@@ -103,9 +103,9 @@ cd DANBO-pytorch/
 # on eval sequence
 python run_nerf.py --config configs/mirror/mirror.txt --basedir logs/mirror --expname body_model --data_path data/mirror/3/23df3bb4-272d-4fba-b7a6-514119ca8d21_cam_3/2022-05-14-13/ --i_testset 5000 --i_pose_weights 5000 --i_weights 5000 --i_print 5000 --no_reload --train_size 1620 --data_size 1800 --n_framecodes 1620 --use_mirr --switch_cam
 ```
-If error such as #_foreach_addcdiv_() # occur, it might be related to specific arguments set to the default in 2.0. Then call the #--fused# flag. See here (https://github.com/pytorch/pytorch/issues/106121). If your gpu memory is not sufficient, you could consider reducing the no rays #--N_rand#
+If you encounter error such as ```_foreach_addcdiv_()```, it might be related to specific arguments set to the default in torch 2.0. Then call the ```--fused``` flag. See [here](https://github.com/pytorch/pytorch/issues/106121). If your gpu memory is not sufficient, you could consider reducing the number of rays ```--N_rand```.
 
-To continue training for a specific model (use the printed generated timestamp in ```logs/mirror/body_model``` e.g #-2024-01-01-20-39-30-c0#) and dont forget to exclude the ```--no_reload``` argument, such as you have below.
+To continue training for a specific model (use the printed generated timestamp in ```logs/mirror/body_model``` e.g ```-2024-01-01-20-39-30-c0```) and dont forget to exclude the ```--no_reload``` argument, as shown below,
 ```
 python run_nerf.py --config configs/mirror/mirror.txt --basedir logs/mirror --expname body_model/-2024-01-01-20-39-30-c0 --data_path data/mirror/3/23df3bb4-272d-4fba-b7a6-514119ca8d21_cam_3/2022-05-14-13/ --i_testset 5000 --i_pose_weights 5000 --i_weights 5000 --i_print 5000 --train_size 1620 --data_size 1800 --n_framecodes 1620 --use_mirr --switch_cam
 ```
@@ -126,7 +126,7 @@ python run_render.py --nerf_args logs/mirror/body_model/-2024-01-28-20-25-46/arg
 The results can be found in ```render_output/mirror_bubble```. The same character can also be rendered in novel (bubble) views, with the ```--n_bubble``` flag.
 ```
 python run_render.py --nerf_args logs/mirror/body_model/-2024-01-28-20-25-46/args.txt --ckptpath logs/mirror/body_model/-2024-01-28-20-25-46/300000.tar --dataset mirror --entry easy --render_type bubble --runname mirror_bubble --selected_framecode 0 --white_bkgd --data_path data/mirror/0/e1531958-26bb-4f46-b3b4-bad1910798c9_cam_0/2023-03-02-19 --n_bubble 4 --train_len 1178 --train_size 1178 --data_size 1308 --render_interval 1 --psnr_images --selected_idxs 0
-
+```
 
 ## Citation
 if the code is helpful to your research, please consider citing and giving us a ⭐ :
