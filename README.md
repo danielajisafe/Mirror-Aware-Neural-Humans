@@ -83,7 +83,7 @@ Mirror-Aware-Neural-Humans
 └── requirements.txt
 ``` -->
 
-To run stage 1, and prepare for stage 2 and 3, please follow these [intermediate steps](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/blob/code_release/dataset/intermediate.md) carefully.
+To run stage 1, and prepare for stage 2 and 3, please follow these [intermediate steps](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/blob/main/dataset/intermediate.md) carefully.
 
 
 #### Stage 2
