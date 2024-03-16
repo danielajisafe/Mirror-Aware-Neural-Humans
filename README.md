@@ -114,7 +114,7 @@ The reconstruction results can be found in `outputs/`.
 	
 The 3D outputs can also be visualized in the jupyter notebook ```vis/vis.ipynb```.
 
-The results from [stage 1]() and [stage 2]() is used to prepare data for training the neural model (stage 3). We provide the pre-processed data in ```.h5``` format for two characters ```camera 3 (eval)``` and ```subject 1 (non-eval)```. Please see [drive](https://drive.google.com/drive/folders/1hTA1BKX63UeulJUixS1vo8hLqsbpX2AA?usp=sharing) and kindly cite the [data source](https://github.com/zju3dv/Mirrored-Human/) for the eval set appropriately.  Move the ```data``` folder under "body_h5" from google drive to the ```DANBO-pytorch/``` directory.
+The results from [stage 1](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans/tree/main?tab=readme-ov-file#stage-1) and [stage 2](https://github.com/danielajisafe/Mirror-Aware-Neural-Humans?tab=readme-ov-file#stage-2) is used to prepare data for training the neural model (stage 3). We provide the pre-processed data in ```.h5``` format for two characters ```camera 3 (eval)``` and ```subject 1 (non-eval)```. Please see [drive](https://drive.google.com/drive/folders/1hTA1BKX63UeulJUixS1vo8hLqsbpX2AA?usp=sharing) and kindly cite the [data source](https://github.com/zju3dv/Mirrored-Human/) for the eval set appropriately.  Move the ```data``` folder under "body_h5" from google drive to the ```DANBO-pytorch/``` directory.
 
 #### Stage 3
 
